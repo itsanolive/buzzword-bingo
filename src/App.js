@@ -9,6 +9,12 @@ function App() {
     {id: 'buzzword5', value: 'Buzzword phrase 5'},
   ]
 
+  // TO-DO: ADD FULL LIST OF BUZZWORDS
+
+  // TO-DO: FILTER TO 24 FOR BINGO BOARD
+
+  // TO-DO: SOLVE FOR KEEPING THE FREE SPACE IN THE MIDDLE OF THE BOARD
+
   return (
     <div className="App">
       <div className="w-full min-h-screen bg-gray-900 text-blue-100 p-2">
