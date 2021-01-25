@@ -15,7 +15,7 @@ class BingoGridItem extends Component {
     }
 
     render() {
-        let defaultStyles = 'p-2 rounded border-2 border-white '
+        let defaultStyles = 'p-2 rounded border-2 border-white text-center '
         let activeStyles = 'bg-green-300 text-gray-800 font-bold'
         let inactiveStyles = 'text-white'
         let classNames = defaultStyles + (this.state.active ? activeStyles : inactiveStyles)
