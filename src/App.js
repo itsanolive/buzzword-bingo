@@ -10,27 +10,27 @@ function App() {
   console.log(bingoBoard);
 
   // TODO: SERVE SHUFFLED ARRAY BACK TO BingoGrid AND SAVE TO BROWSER STORAGE AGAIN
-  function shuffleClick() {
-    console.log('click');
-    var currentIndex = bingoBoard.length,
-      temporaryValue,
-      randomIndex
+  // function shuffleClick() {
+  //   console.log('click');
+  //   var currentIndex = bingoBoard.length,
+  //     temporaryValue,
+  //     randomIndex
 
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-      // Pick a remaining element...
-      randomIndex = Math.floor(
-        Math.random() * currentIndex,
-      )
-      currentIndex -= 1
-      // console.log(array, currentIndex)
+  //   // While there remain elements to shuffle...
+  //   while (0 !== currentIndex) {
+  //     // Pick a remaining element...
+  //     randomIndex = Math.floor(
+  //       Math.random() * currentIndex,
+  //     )
+  //     currentIndex -= 1
+  //     // console.log(array, currentIndex)
 
-      // And swap it with the current element.
-      temporaryValue = bingoBoard[currentIndex]
-      bingoBoard[currentIndex] = bingoBoard[randomIndex]
-      bingoBoard[randomIndex] = temporaryValue
-    }
-  }
+  //     // And swap it with the current element.
+  //     temporaryValue = bingoBoard[currentIndex]
+  //     bingoBoard[currentIndex] = bingoBoard[randomIndex]
+  //     bingoBoard[randomIndex] = temporaryValue
+  //   }
+  // }
 
   return (
     <div className="App">
