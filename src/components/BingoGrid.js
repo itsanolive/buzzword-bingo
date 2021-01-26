@@ -16,6 +16,27 @@ class BingoGrid extends Component {
         // const bingoBoard = this.state.buzzwords
         // console.log('pre-splice', this.props.buzzwords);
 
+        // ? Shuffle order of buzzwords on render
+        var bingoBoard = this.props.buzzwords
+        var currentIndex = bingoBoard.length,
+            temporaryValue,
+            randomIndex
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+            // Pick a remaining element...
+            randomIndex = Math.floor(
+                Math.random() * currentIndex,
+            )
+            currentIndex -= 1
+            // console.log(array, currentIndex)
+
+            // And swap it with the current element.
+            temporaryValue = bingoBoard[currentIndex]
+            bingoBoard[currentIndex] = bingoBoard[randomIndex]
+            bingoBoard[randomIndex] = temporaryValue
+        }
+
         // * insert "free" into the array at index 12
         // TODO - FIGURE OUT WHY THIS ITEM IS DUPLICATED IN THE ARRAY BUT ONLY MAPPING ONE COMPONENT
         this.props.buzzwords.splice(12, 1, {value: 'FREE', id: 'free'})

@@ -25,8 +25,8 @@ class BingoGridItem extends Component {
     }
 
     render() {
-        let defaultStyles = 'BingoGridItem p-1 sm:p-2 rounded border-2 border-gray-900 dark:border-white text-center break-all md:break-words text-xs md:text-base '
-        let activeStyles = 'bg-gray-900 text-green-300 border-green-300 dark:bg-green-300 dark:text-gray-800 shadow-lg font-bold'
+        let defaultStyles = 'BingoGridItem p-1 sm:p-2 rounded border-2 border-gray-900 dark:border-white text-center md:font-bold break-words md:break-normal text-xs md:text-base '
+        let activeStyles = 'bg-gray-900 text-green-300 border-green-300 dark:bg-green-300 dark:text-gray-800 shadow-lg'
         let inactiveStyles = 'text-gray-900 dark:text-white'
         let classNames = defaultStyles + (this.state.active ? activeStyles : inactiveStyles)
 

@@ -33,6 +33,10 @@ function App() {
   //   }
   // }
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     <div className="App">
       <main className="bg-gray-50 dark:bg-gray-900">
@@ -40,9 +44,9 @@ function App() {
           <h1 className="text-center text-2xl text-gray-900 font-bold dark:text-green-300 uppercase">Buzzword Bingo!</h1>
         </header>
         <div className="w-full min-h-screen p-1 md:p-2">
-          <section id="bingo" className="container p-1 md:p-2 mx-auto">
+          <section id="bingo" className="container max-w-screen-md p-1 md:p-2 mx-auto">
             <BingoGrid buzzwords={bingoBoard} />
-            {/* <button disabled className="rounded p-4 bg-blue-100 text-gray-900 font-bold disabled:opacity-50" onClick={shuffleClick}>Shuffle</button> */}
+            <button className="rounded p-4 bg-green-300 text-gray-900 font-bold disabled:opacity-50" onClick={refreshPage}>Reset & Shuffle</button>
           </section>
         </div>
       </main>
