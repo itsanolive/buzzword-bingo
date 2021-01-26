@@ -14,12 +14,12 @@ class BingoGrid extends Component {
 
     renderGrid() {
         // const bingoBoard = this.state.buzzwords
-        console.log('pre-splice', this.props.buzzwords);
+        // console.log('pre-splice', this.props.buzzwords);
 
         // * insert "free" into the array at index 12
         // TODO - FIGURE OUT WHY THIS ITEM IS DUPLICATED IN THE ARRAY BUT ONLY MAPPING ONE COMPONENT
         this.props.buzzwords.splice(12, 1, {value: 'FREE', id: 'free'})
-        console.log('post-splice', this.props.buzzwords);
+        // console.log('post-splice', this.props.buzzwords);
 
         return this.props.buzzwords.map(
             (item) => <BingoGridItem key={item.id + '-' + uuidv4()} id={item.id} buzzword={item.value} />
@@ -61,7 +61,7 @@ class BingoGrid extends Component {
 
     render() {
         return (
-            <div className="grid grid-cols-5 gap-2 my-4">
+            <div className="grid grid-cols-5 gap-1 sm:gap-2 my-4">
                 {this.renderGrid()}
             </div>
         )

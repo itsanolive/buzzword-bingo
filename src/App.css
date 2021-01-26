@@ -1,0 +1,16 @@
+.Header {
+    border-bottom: 2px solid;
+}
+
+.BingoGridItem {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 769px) {
+    .BingoGridItem  {
+        min-height: 100px;
+    }
+}

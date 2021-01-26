@@ -68,8 +68,8 @@ export const buzzwordList = [
         "id": "closetotime"
     },
     {
-        "value": "Development Timeline/Timeframe",
-        "id": "developmenttimeline/timeframe"
+        "value": "Development Timeline",
+        "id": "developmenttimeline"
     },
     {
         "value": "Dependencies",
