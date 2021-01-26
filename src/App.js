@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <main className="bg-blue-100 dark:bg-gray-900">
+      <main className="bg-gray-50 dark:bg-gray-900">
         <header className="Header w-full bg-green-300 dark:bg-gray-900 py-4 shadow-md border-gray-900">
           <h1 className="text-center text-2xl text-gray-900 font-bold dark:text-green-300 uppercase">Buzzword Bingo!</h1>
         </header>
