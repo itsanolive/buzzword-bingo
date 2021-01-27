@@ -1,5 +1,20 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .Header {
     border-bottom: 2px solid;
+}
+
+.Nav__right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Nav__right svg {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .BingoGridItem {
@@ -13,4 +28,13 @@
     .BingoGridItem  {
         min-height: 100px;
     }
+}
+
+.Footer__BuiltWith--IconContainer span {
+    align-items: center;
+    justify-content: center;
+}
+
+.Footer__BuiltWith--Icon {
+    font-size: 3rem;
 }
