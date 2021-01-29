@@ -1,14 +1,16 @@
 import './App.css'
-import BingoGrid from './components/BingoGrid.js'
 import { buzzwordList } from './buzzwords'
-import { Helmet } from 'react-helmet';
-import { FaReact } from 'react-icons/fa';
+import { Helmet } from 'react-helmet'
 import { FaGithub } from 'react-icons/fa';
-import { FaNode } from 'react-icons/fa';
-import { SiTailwindcss } from 'react-icons/si';
-import { SiNpm } from 'react-icons/si';
+import BingoGrid from './components/BingoGrid.js'
+import IconLink from './components/IconLink.js'
 
 function App() {
+
+  // * dark mode toggle
+  // function darkToggle() {
+
+  // }
 
   // TODO: RENDER FULL BUZZWORDS BANK
 
@@ -55,21 +57,21 @@ function App() {
 
       </Helmet>
       <main className="bg-gray-50 dark:bg-gray-900">
-        <header className="Header flex w-full bg-green-300 dark:bg-gray-900 py-4 shadow-md border-gray-900">
+        <header className="Header flex w-full bg-green-300 py-4 px-2 shadow-md border-gray-900">
           <div className="container flex mx-auto">
             <div className="w-1/4"></div>
             <div className="w-1/2">
-              <h1 className="text-center text-2xl text-gray-900 font-bold dark:text-green-300 uppercase">Buzzword Bingo!</h1>
+              <h1 className="text-center text-3xl text-gray-900 font-bold uppercase">Buzzword Bingo!</h1>
             </div>
             <div className="w-1/4 Nav__right">
-              <a target="_blank" rel="noopener noreferrer" href="https://github.com/itsanolive/buzzword-bingo" className="text-gray-900 rounded p-1 hover:text-green-300 hover:bg-gray-900"><FaGithub /></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/itsanolive/buzzword-bingo" className="text-gray-900 text-lg rounded p-1 hover:text-green-300 hover:bg-gray-900"><FaGithub /></a>
             </div>
           </div>
         </header>
         <div className="w-full min-h-screen p-1 md:p-2">
           <section id="bingo" className="container max-w-screen-md p-1 md:p-2 mx-auto">
             <BingoGrid buzzwords={bingoBoard} />
-            <button className="rounded p-4 bg-green-300 text-gray-900 font-bold disabled:opacity-50" onClick={refreshPage}>Reset & Shuffle</button>
+            <button className="rounded p-4 bg-green-300 text-gray-900 text-lg font-bold disabled:opacity-50" onClick={refreshPage}>Reset & Shuffle</button>
           </section>
         </div>
         <footer className="bg-gray-900 text-green-300">
@@ -77,18 +79,39 @@ function App() {
             <div className="Footer__BuiltWith sm:w-1/2 mx-auto my-6">
               <p className="pb-4">Built with</p>
               <div className="Footer__BuiltWith--IconContainer grid grid-cols-4 gap-2 text-2xl">
-                <span className="flex">
+                <IconLink name="react" href="https://reactjs.org/">ReactJS</IconLink>
+
+                {/* <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://reactjs.org/"
+                  aria-label="ReactJS" className="flex">
                   <FaReact className="Footer__BuiltWith--Icon pr-2" />
-                </span>
-                <span className="flex">
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://tailwindcss.com/"
+                  aria-label="TailwindCSS"
+                  className="flex">
                   <SiTailwindcss className="Footer__BuiltWith--Icon pr-2" />
-                </span>
-                <span className="flex">
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://nodejs.org/en/"
+                  aria-label="NodeJS"
+                  className="flex">
                   <FaNode className="Footer__BuiltWith--Icon pr-2" />
-                </span>
-                <span className="flex">
+                </a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.npmjs.com/"
+                  aria-label="NPM"
+                  className="flex">
                   <SiNpm className="Footer__BuiltWith--Icon pr-2" />
-                </span>
+                </a> */}
               </div>
             </div>
             <p>&copy; Olivia Beaty, {year} </p>

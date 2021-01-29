@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+html {
+    font-size: 12px;
+}
+
 .Header {
     border-bottom: 2px solid;
 }
@@ -18,7 +22,7 @@
 }
 
 .BingoGridItem {
-    min-height: 40px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +34,7 @@
     }
 }
 
-.Footer__BuiltWith--IconContainer span {
+.Footer__BuiltWith--IconContainer a {
     align-items: center;
     justify-content: center;
 }
