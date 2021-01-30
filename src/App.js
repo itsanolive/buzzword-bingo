@@ -1,9 +1,8 @@
 import './App.css'
 import { buzzwordList } from './buzzwords'
 import { Helmet } from 'react-helmet'
-import { FaGithub } from 'react-icons/fa';
-import BingoGrid from './components/BingoGrid.js'
-import IconLink from './components/IconLink.js'
+import BingoGrid from './components/BingoGrid'
+import LinkExternal from './components/LinkExternal'
 
 function App() {
 
@@ -64,7 +63,15 @@ function App() {
               <h1 className="text-center text-3xl text-gray-900 font-bold uppercase">Buzzword Bingo!</h1>
             </div>
             <div className="w-1/4 Nav__right">
-              <a target="_blank" rel="noopener noreferrer" href="https://github.com/itsanolive/buzzword-bingo" className="text-gray-900 text-lg rounded p-1 hover:text-green-300 hover:bg-gray-900"><FaGithub /></a>
+              <LinkExternal
+                label="Github"
+                icon="github"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/itsanolive/buzzword-bingo"
+                className="text-gray-900 text-lg rounded p-1 hover:text-green-300 hover:bg-gray-900">
+              </LinkExternal>
+              {/* <a target="_blank" rel="noopener noreferrer" href="https://github.com/itsanolive/buzzword-bingo" className="text-gray-900 text-lg rounded p-1 hover:text-green-300 hover:bg-gray-900"><FaGithub /></a> */}
             </div>
           </div>
         </header>
@@ -79,7 +86,30 @@ function App() {
             <div className="Footer__BuiltWith sm:w-1/2 mx-auto my-6">
               <p className="pb-4">Built with</p>
               <div className="Footer__BuiltWith--IconContainer grid grid-cols-4 gap-2 text-2xl">
-                <IconLink name="react" href="https://reactjs.org/">ReactJS</IconLink>
+                <LinkExternal
+                  label="ReactJS"
+                  iconClassName="Footer__BuiltWith--Icon pr-2"
+                  icon="react"
+                  href="https://reactjs.org/">
+                </LinkExternal>
+                <LinkExternal
+                  label="TailwindCSS"
+                  iconClassName="Footer__BuiltWith--Icon pr-2"
+                  icon="tailwindcss"
+                  href="https://tailwindcss.com/">
+                </LinkExternal>
+                <LinkExternal
+                  label="NodeJS"
+                  iconClassName="Footer__BuiltWith--Icon pr-2"
+                  icon="nodejs"
+                  href="https://nodejs.org/en/">
+                </LinkExternal>
+                <LinkExternal
+                  label="NPM"
+                  iconClassName="Footer__BuiltWith--Icon pr-2"
+                  icon="npm"
+                  href="https://www.npmjs.com/">
+                </LinkExternal>
 
                 {/* <a
                   target="_blank"
