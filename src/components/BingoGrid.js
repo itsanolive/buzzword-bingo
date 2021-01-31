@@ -6,11 +6,36 @@ class BingoGrid extends Component {
     constructor(props) {
         super(props)
         this.renderGrid = this.renderGrid.bind(this)
+        // this.checkBingo = this.checkBingo.bind(this)
     }
 
     // TODO: use a different method to update buzzword array state
 
     // TODO: use a separate method to add free space to the grid - if there's a way to insert it without adding to the array, that'd be great
+
+    // * if user gets bingo, do something
+    checkBingo = () => {
+        let bingoCell = document.querySelectorAll('.BingoGridItem')
+        let activeCells = []
+        bingoCell.forEach(function(item, index) {
+            let active = item.getAttribute('data-active-cell')
+            if (active === 'true') {
+                activeCells.push(index)
+            }
+        })
+        console.log(activeCells);
+        if (activeCells > 4) {
+            let i = 0
+            while (i < activeCells.length) {
+                // * check for bingo
+                // * vertical bingo - if index pattern follows i + 5 up to 25
+
+                // * horizontal bingo - if index pattern follows i + 1 up to multiples of 5, minus 1?
+
+                // * diagonal bingo - if index starts at 0, i + 6 up to 24
+            }
+        }
+    }
 
     renderGrid() {
         // const bingoBoard = this.state.buzzwords
@@ -43,7 +68,7 @@ class BingoGrid extends Component {
         // console.log('post-splice', this.props.buzzwords);
 
         return this.props.buzzwords.map(
-            (item) => <BingoGridItem key={item.id + '-' + uuidv4()} id={item.id} buzzword={item.value} />
+            (item) => <BingoGridItem key={item.id + '-' + uuidv4()} id={item.id} buzzword={item.value} onClick={this.checkBingo} />
         )
     }
 

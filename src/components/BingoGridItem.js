@@ -17,10 +17,23 @@ class BingoGridItem extends Component {
         }
     }
 
+    // * original toggleActive function
+    // toggleActive() {
+    //     if (this.props.id !== 'free') {
+    //         const currentState = this.state.active
+    //         this.setState({ active: !currentState })
+    //     }
+    // }
+
+    // * test toggleActive with callback function
     toggleActive() {
         if (this.props.id !== 'free') {
             const currentState = this.state.active
-            this.setState({ active: !currentState })
+            this.setState({ active: !currentState }, () => {
+                if (this.props.onClick) {
+                    this.props.onClick(this);
+                }
+            })
         }
     }
 
@@ -34,7 +47,8 @@ class BingoGridItem extends Component {
             <div
                 id={this.props.id}
                 onClick={this.toggleActive}
-                className={classNames} >
+                className={classNames}
+                data-active-cell={this.state.active} >
                 {this.props.buzzword}
             </div>
         )
