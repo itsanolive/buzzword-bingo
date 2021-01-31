@@ -1,6 +1,7 @@
 import './App.css'
 import { buzzwordList } from './buzzwords'
 import { Helmet } from 'react-helmet'
+import DarkModeToggle from './components/DarkModeToggle'
 import BingoGrid from './components/BingoGrid'
 import LinkExternal from './components/LinkExternal'
 
@@ -58,7 +59,9 @@ function App() {
       <main className="bg-gray-50 dark:bg-gray-900">
         <header className="Header flex w-full bg-green-300 py-4 px-2 shadow-md border-gray-900">
           <div className="container flex mx-auto">
-            <div className="w-1/4"></div>
+            <div className="w-1/4">
+              <DarkModeToggle></DarkModeToggle>
+            </div>
             <div className="w-1/2">
               <h1 className="text-center text-3xl text-gray-900 font-bold uppercase">Buzzword Bingo!</h1>
             </div>

@@ -10,6 +10,14 @@ html {
     border-bottom: 2px solid;
 }
 
+#DarkModeToggle {
+    @apply flex text-gray-900;
+}
+
+#DarkModeToggle svg {
+    height: 1.5rem;
+}
+
 .Nav__right {
     display: flex;
     justify-content: flex-end;
