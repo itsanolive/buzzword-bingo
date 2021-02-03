@@ -1,7 +1,7 @@
 import './App.css'
 import { buzzwordList } from './buzzwords'
 import { Helmet } from 'react-helmet'
-import DarkModeToggle from './components/DarkModeToggle'
+// import DarkModeToggle from './components/DarkModeToggle'
 import BingoGrid from './components/BingoGrid'
 import LinkExternal from './components/LinkExternal'
 
@@ -56,11 +56,11 @@ function App() {
         <meta name="description" content="Track business buzzwords and win back some sanity during meetings"/>
 
       </Helmet>
-      <main className="bg-gray-50 dark:bg-gray-900">
+      <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <header className="Header flex w-full bg-green-300 py-4 px-2 shadow-md border-gray-900">
           <div className="container flex mx-auto">
             <div className="w-1/4">
-              <DarkModeToggle></DarkModeToggle>
+              {/* <DarkModeToggle></DarkModeToggle> */}
             </div>
             <div className="w-1/2">
               <h1 className="text-center text-3xl text-gray-900 font-bold uppercase">Buzzword Bingo!</h1>
@@ -78,7 +78,7 @@ function App() {
             </div>
           </div>
         </header>
-        <div className="w-full min-h-screen p-1 md:p-2">
+        <div className="w-full p-1 md:p-2">
           <section id="bingo" className="container max-w-screen-md p-1 md:p-2 mx-auto">
             <BingoGrid buzzwords={bingoBoard} />
             <button className="rounded p-4 bg-green-300 text-gray-900 text-lg font-bold disabled:opacity-50" onClick={refreshPage}>Reset & Shuffle</button>

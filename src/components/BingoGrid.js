@@ -15,6 +15,58 @@ class BingoGrid extends Component {
 
     // * if user gets bingo, do something
     checkBingo = () => {
+        const returnBingo = (bingo) => {
+            if (bingo.length === 0) {
+                return false
+            } else {
+                let isBingo = bingo.every((val) => {return activeCells.indexOf(val) >= 0})
+                if ( isBingo === true ) {
+                    console.log('Bingo!');
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+        const vertBingo = (position) => {
+            let bingo = []
+            for ( let i = 0; i < 5; i++ ) {
+                bingo.push(position)
+                position += 5
+            }
+            // console.log('vert', returnBingo(bingo));
+            returnBingo(bingo);
+        }
+        const horBingo = (position) => {
+            let bingo = []
+            // console.log('some check:', [0,5,10,15,20].some((element) => element === position));
+            if ( [0,5,10,15,20].some((element) => element === position) ) {
+                for ( let i = 0; i < 5; i++ )  {
+                    bingo.push(position)
+                    position += 1
+                }
+            }
+            // console.log('horBingo array:', bingo);
+            // console.log('hor', returnBingo(bingo));
+            returnBingo(bingo);
+        }
+        const diagBingo = (position) => {
+            let bingo = []
+            if ( position === 0 ) {
+                for (let i = 0; i < 5; i++) {
+                    bingo.push(position)
+                    position += 6
+                }
+            } else if ( position === 4 ) {
+                for (let i = 0; i < 5; i++) {
+                    bingo.push(position)
+                    position += 4
+                }
+            }
+            // console.log('diag', returnBingo(bingo));
+            returnBingo(bingo);
+        }
+
         let bingoCell = document.querySelectorAll('.BingoGridItem')
         let activeCells = []
         bingoCell.forEach(function(item, index) {
@@ -23,17 +75,16 @@ class BingoGrid extends Component {
                 activeCells.push(index)
             }
         })
-        console.log(activeCells);
-        if (activeCells > 4) {
-            let i = 0
-            while (i < activeCells.length) {
-                // * check for bingo
-                // * vertical bingo - if index pattern follows i + 5 up to 25
 
-                // * horizontal bingo - if index pattern follows i + 1 up to multiples of 5, minus 1?
+        // console.log(activeCells);
 
-                // * diagonal bingo - if index starts at 0, i + 6 up to 24
-            }
+        if (activeCells.length > 4) {
+           for (let i = 0; i < activeCells.length; i++) {
+                let currentPos = activeCells[i]
+                vertBingo(currentPos)
+                horBingo(currentPos)
+                diagBingo(currentPos)
+           }
         }
     }
 

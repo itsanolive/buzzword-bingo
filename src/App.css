@@ -6,6 +6,12 @@ html {
     font-size: 12px;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .Header {
     border-bottom: 2px solid;
 }
