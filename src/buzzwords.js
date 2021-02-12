@@ -142,5 +142,29 @@ export const buzzwordList = [
     {
         "value": "In My Old Life",
         "id": "inmyoldlife"
+    },
+    {
+        "value": "Radar",
+        "id": "radar"
+    },
+    {
+        "value": "Alignment",
+        "id": "alignment"
+    },
+    {
+        "value": "Path Forward",
+        "id": "pathforward"
+    },
+    {
+        "value": "Guardrails",
+        "id": "guardrails"
+    },
+    {
+        "value": "Phase",
+        "id": "phase"
+    },
+    {
+        "value": "Step Back",
+        "id": "stepback"
     }
 ]

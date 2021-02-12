@@ -35,6 +35,10 @@ main {
     height: 1.5rem;
 }
 
+.BingoSuccess {
+    @apply bg-green-600 dark:bg-green-600;
+}
+
 .BingoGridItem {
     min-height: 50px;
     display: flex;

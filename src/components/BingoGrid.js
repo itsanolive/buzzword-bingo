@@ -16,14 +16,31 @@ class BingoGrid extends Component {
     // * if user gets bingo, do something
     checkBingo = () => {
         const returnBingo = (bingo) => {
+            let bingoBg = document.getElementById('bingo-container')
+            let bingoBgClasses = bingoBg.classList
+            let hasBingo = false
+            for (let i = 0; i < bingoBgClasses.length; i++) {
+                const bingoBgClass = bingoBgClasses[i]
+                if (bingoBgClass === 'BingoSuccess') {
+                    hasBingo = true
+                }
+            }
+            // console.log(bingoBgClasses);
             if (bingo.length === 0) {
                 return false
             } else {
                 let isBingo = bingo.every((val) => {return activeCells.indexOf(val) >= 0})
                 if ( isBingo === true ) {
-                    console.log('Bingo!');
+                    // alert('You got bingo!');
+                    if (!hasBingo) {
+                        bingoBgClasses.add('BingoSuccess')
+                        // console.log('bingo');
+                    }
                     return true
                 } else {
+                    if (hasBingo) {
+                        // bingoBgClasses.remove('BingoSuccess')
+                    }
                     return false
                 }
             }

@@ -78,7 +78,7 @@ function App() {
             </div>
           </div>
         </header>
-        <div className="w-full p-1 md:p-2">
+        <div id="bingo-container" className="w-full p-1 md:p-2">
           <section id="bingo" className="container max-w-screen-md p-1 md:p-2 mx-auto">
             <BingoGrid buzzwords={bingoBoard} />
             <button className="rounded p-4 bg-green-300 text-gray-900 text-lg font-bold disabled:opacity-50" onClick={refreshPage}>Reset & Shuffle</button>
