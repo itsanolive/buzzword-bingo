@@ -166,5 +166,33 @@ export const buzzwordList = [
     {
         "value": "Step Back",
         "id": "stepback"
+    },
+    {
+        "value": "Deep dive",
+        "id": "deepdive"
+    },
+    {
+        "value": "Deep dive",
+        "id": "deepdive"
+    },
+    {
+        "value": "In the weeds",
+        "id": "intheweeds"
+    },
+    {
+        "value": "Cover off on",
+        "id": "coveroffon"
+    },
+    {
+        "value": "Interminable silence",
+        "id": "interminablesilence"
+    },
+    {
+        "value": "Terrible joke",
+        "id": "terriblejoke"
+    },
+    {
+        "value": "Unnecessary story",
+        "id": "terriblejoke"
     }
 ]
