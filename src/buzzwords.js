@@ -168,14 +168,6 @@ export const buzzwordList = [
         "id": "stepback"
     },
     {
-        "value": "Deep dive",
-        "id": "deepdive"
-    },
-    {
-        "value": "Deep dive",
-        "id": "deepdive"
-    },
-    {
         "value": "In the weeds",
         "id": "intheweeds"
     },
