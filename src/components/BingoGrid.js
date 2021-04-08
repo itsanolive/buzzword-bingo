@@ -175,7 +175,7 @@ class BingoGrid extends Component {
 
     render() {
         return (
-            <div className="grid grid-cols-5 gap-1 sm:gap-2 my-4">
+            <div className="grid grid-cols-5 gap-1 sm:gap-4 my-4">
                 {this.renderGrid()}
             </div>
         )

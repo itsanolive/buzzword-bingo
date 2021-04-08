@@ -78,7 +78,7 @@ function App() {
         <meta name="description" content="Track business buzzwords and win back some sanity during meetings"/>
 
       </Helmet>
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <main className="min-h-screen bg-gray-50 dark:bg-gray-800">
         <header className="Header flex w-full bg-green-300 py-4 px-2 shadow-md border-gray-900">
           <div className="container flex mx-auto">
             <div className="w-1/4">
@@ -100,7 +100,7 @@ function App() {
             </div>
           </div>
         </header>
-        <div id="bingo-container" className="w-full p-1 md:p-2">
+        <div id="bingo-container" className="w-full p-1 md:px-2 md:py-10">
           <section id="bingo" className="container max-w-screen-md p-1 md:p-2 mx-auto">
             <BingoGrid buzzwords={bingoBoard} />
             <button className="rounded p-4 bg-green-300 text-gray-900 text-lg font-bold disabled:opacity-50" onClick={refreshPage}>Reset & Shuffle</button>
