@@ -45,14 +45,14 @@ main {
     align-items: center;
     justify-content: center;
 
-    @apply p-1 sm:p-2 rounded border border-gray-300 dark:border-gray-600 text-center md:font-bold break-normal text-xs md:text-lg text-gray-700 dark:text-white bg-gray-100 dark:bg-gray-700 shadow;
+    @apply p-1 sm:p-2 rounded border border-gray-300 dark:border-gray-600 text-center sm:font-bold break-normal text-xs sm:text-lg text-gray-700 dark:text-white bg-gray-100 dark:bg-gray-700 shadow;
 }
 
 .BingoGridItem.BingoGridItem--active {
     @apply bg-gray-700 text-green-300 border-green-300 dark:bg-green-300 dark:text-gray-800 shadow-lg;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 640px) {
     .BingoGridItem  {
         min-height: 100px;
     }
