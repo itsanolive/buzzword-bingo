@@ -3,6 +3,7 @@ import { buzzwordList } from './buzzwords'
 import { Helmet } from 'react-helmet'
 // import DarkModeToggle from './components/DarkModeToggle'
 import BingoGrid from './components/BingoGrid'
+import BingoWordBank from './components/BingoWordBank'
 import LinkExternal from './components/LinkExternal'
 
 function App() {
@@ -105,6 +106,10 @@ function App() {
             <BingoGrid buzzwords={bingoBoard} />
             <button className="rounded p-4 bg-green-300 text-gray-900 text-lg font-bold disabled:opacity-50" onClick={refreshPage}>Reset & Shuffle</button>
           </section>
+        </div>
+        <div class="BingoWordBank--container">
+          <h2 class="text-gray-900 dark:text-green-300 font-bold text-2xl my-6">Buzzword Bank</h2>
+          <BingoWordBank activeBuzzwords={bingoBoard} buzzwords={buzzwordList} />
         </div>
         <footer className="bg-gray-900 text-green-300">
           <div className="container flex flex-col py-4 mx-auto text-center">
