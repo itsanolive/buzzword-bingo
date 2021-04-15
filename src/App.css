@@ -18,10 +18,35 @@ main {
 
 #DarkModeToggle {
     @apply flex text-gray-900;
+    align-items: center;
 }
 
 #DarkModeToggle svg {
     height: 1.5rem;
+}
+
+#DarkModeToggle .light-icon,
+#DarkModeToggle .toggle,
+#DarkModeToggle .dark-icon {
+    @apply text-gray-500;
+}
+
+#DarkModeToggle .light-icon svg,
+#DarkModeToggle .dark-icon svg {
+    @apply h-8;
+}
+
+#DarkModeToggle .light-icon.active,
+#DarkModeToggle .dark-icon.active {
+    @apply text-gray-900;
+}
+
+#DarkModeToggle .toggle {
+    display: none;
+}
+
+#DarkModeToggle .toggle.active {
+    display: block;
 }
 
 .Nav__right {
