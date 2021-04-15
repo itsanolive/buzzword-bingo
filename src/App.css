@@ -84,7 +84,7 @@ main {
 }
 
 .BingoWordBank {
-    @apply grid grid-cols-7 gap-1 sm:gap-4 my-4;
+    @apply grid grid-cols-3 sm:grid-cols-7 gap-1 sm:gap-4 my-4;
 }
 
 .BingoWordBankItem {
