@@ -89,7 +89,7 @@ function App() {
       </Helmet>
       <main id="main" className={mode}>
         <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
-          <header className="Header flex w-full bg-green-300 py-4 px-2 shadow-md border-gray-900">
+          <header className="Header">
             <div className="Header--Container">
               <div className="w-1/4">
                 <DarkModeToggle mode={mode}></DarkModeToggle>
@@ -123,7 +123,7 @@ function App() {
             <div className="Footer--Container">
               <div className="Footer__BuiltWith">
                 <p className="pb-4">Built with</p>
-                <div className="Footer__BuiltWith--IconContainer grid grid-cols-5 gap-2 text-2xl">
+                <div className="Footer__BuiltWith--IconContainer">
                   <LinkExternal
                     label="ReactJS"
                     iconClassName="Footer__BuiltWith--Icon pr-2"

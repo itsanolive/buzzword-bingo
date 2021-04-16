@@ -13,6 +13,7 @@ main {
 }
 
 .Header {
+    @apply flex w-full bg-green-300 py-4 px-2 shadow-md border-gray-900;
     border-bottom: 1px solid;
 }
 
@@ -131,6 +132,10 @@ main {
 
 .Footer__BuiltWith {
     @apply sm:w-1/2 mx-auto my-6;
+}
+
+.Footer__BuiltWith--IconContainer {
+    @apply grid grid-cols-5 gap-2 text-2xl;
 }
 
 .Footer__BuiltWith--IconContainer a {
