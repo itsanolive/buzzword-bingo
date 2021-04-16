@@ -90,7 +90,7 @@ function App() {
       <main id="main" className={mode}>
         <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
           <header className="Header flex w-full bg-green-300 py-4 px-2 shadow-md border-gray-900">
-            <div className="container flex mx-auto">
+            <div className="Header--Container">
               <div className="w-1/4">
                 <DarkModeToggle mode={mode}></DarkModeToggle>
               </div>
@@ -104,7 +104,7 @@ function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://github.com/itsanolive/buzzword-bingo"
-                  className="text-gray-900 text-lg rounded p-1 hover:text-green-300 hover:bg-gray-900">
+                  className="text-gray-900 text-3xl rounded-full p-1 hover:text-green-300 hover:bg-gray-900">
                 </LinkExternal>
               </div>
             </div>
@@ -123,30 +123,41 @@ function App() {
             <div className="container flex flex-col py-4 mx-auto text-center">
               <div className="Footer__BuiltWith sm:w-1/2 mx-auto my-6">
                 <p className="pb-4">Built with</p>
-                <div className="Footer__BuiltWith--IconContainer grid grid-cols-4 gap-2 text-2xl">
+                <div className="Footer__BuiltWith--IconContainer grid grid-cols-5 gap-2 text-2xl">
                   <LinkExternal
                     label="ReactJS"
                     iconClassName="Footer__BuiltWith--Icon pr-2"
                     icon="react"
-                    href="https://reactjs.org/">
+                    href="https://reactjs.org/"
+                    className="flex">
                   </LinkExternal>
                   <LinkExternal
                     label="TailwindCSS"
                     iconClassName="Footer__BuiltWith--Icon pr-2"
                     icon="tailwindcss"
-                    href="https://tailwindcss.com/">
+                    href="https://tailwindcss.com/"
+                    className="flex">
                   </LinkExternal>
                   <LinkExternal
                     label="NodeJS"
                     iconClassName="Footer__BuiltWith--Icon pr-2"
                     icon="nodejs"
-                    href="https://nodejs.org/en/">
+                    href="https://nodejs.org/en/"
+                    className="flex">
                   </LinkExternal>
                   <LinkExternal
                     label="NPM"
                     iconClassName="Footer__BuiltWith--Icon pr-2"
                     icon="npm"
-                    href="https://www.npmjs.com/">
+                    href="https://www.npmjs.com/"
+                    className="flex">
+                  </LinkExternal>
+                  <LinkExternal
+                    label="Font Awesome"
+                    iconClassName="Footer__BuiltWith--Icon pr-2"
+                    icon="font-awesome-alt-brands"
+                    href="https://fontawesome.com/license/free"
+                    className="flex">
                   </LinkExternal>
                 </div>
               </div>
