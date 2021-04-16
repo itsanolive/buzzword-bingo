@@ -99,29 +99,29 @@ function App() {
               </div>
               <div className="w-1/4 Nav__right">
                 <LinkExternal
-                  label="Github"
+                  label="See and report issues on Github"
                   icon="github"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/itsanolive/buzzword-bingo"
+                  href="https://github.com/itsanolive/buzzword-bingo/issues"
                   className="text-gray-900 text-3xl rounded-full p-1 hover:text-green-300 hover:bg-gray-900">
                 </LinkExternal>
               </div>
             </div>
           </header>
-          <div id="bingo-container" className="w-full p-1 md:px-2 md:py-10">
-            <section id="bingo" className="container max-w-screen-md p-1 md:p-2 mx-auto">
+          <div id="bingo" className="Bingo--Container">
+            <section className="Bingo">
               <BingoGrid buzzwords={bingoBoard} />
               <button className="rounded p-4 bg-green-300 text-gray-900 text-lg font-bold disabled:opacity-50" onClick={refreshPage}>Reset & Shuffle</button>
             </section>
           </div>
-          <div class="BingoWordBank--container">
+          <div class="BingoWordBank--Container">
             <h2 class="text-gray-900 dark:text-green-300 font-bold text-2xl my-6">Buzzword Bank</h2>
             <BingoWordBank activeBuzzwords={bingoBoard} buzzwords={buzzwordList} />
           </div>
-          <footer className="bg-gray-900 text-green-300">
-            <div className="container flex flex-col py-4 mx-auto text-center">
-              <div className="Footer__BuiltWith sm:w-1/2 mx-auto my-6">
+          <footer className="Footer">
+            <div className="Footer--Container">
+              <div className="Footer__BuiltWith">
                 <p className="pb-4">Built with</p>
                 <div className="Footer__BuiltWith--IconContainer grid grid-cols-5 gap-2 text-2xl">
                   <LinkExternal
