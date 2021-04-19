@@ -5,13 +5,29 @@ import DarkModeToggle from './components/DarkModeToggle'
 import BingoGrid from './components/BingoGrid'
 import BingoWordBank from './components/BingoWordBank'
 import LinkExternal from './components/LinkExternal'
+import GA4React from "ga-4-react";
 
 function App() {
 
+  const ga4react = new GA4React(
+    'G-H5WYRPWEML',
+    { /* ga custom config, optional */ },
+    [ /* additional code, optional */],
+    5000 /* timeout, optional, defaults is 5000 */
+    /* { nonce: ['first-script-is-async','second-script'] } */
+  );
+  ga4react.initialize().then((ga4) => {
+    // console.log(ga4);
+    ga4.pageview('path')
+    ga4.gtag('event', 'pageview', 'path') // or your custom gtag event
+  }, (err) => {
+    console.error(err)
+  })
+
   // * dark mode
   const setMode = () => {
-    console.log('window.matchMedia', window.matchMedia);
-    console.log("window.matchMedia('(prefers - color - scheme: dark)').matches')", window.matchMedia('(prefers-color-scheme: dark)').matches);
+    // console.log('window.matchMedia', window.matchMedia);
+    // console.log("window.matchMedia('(prefers - color - scheme: dark)').matches')", window.matchMedia('(prefers-color-scheme: dark)').matches);
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark'
     } else {
@@ -20,7 +36,7 @@ function App() {
   }
 
   let mode = setMode()
-  console.log('initial mode', mode);
+  // console.log('initial mode', mode);
 
   const shuffledBuzzwords = buzzArr => {
     let currentIndex = buzzArr.length,
