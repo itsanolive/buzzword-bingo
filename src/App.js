@@ -10,8 +10,8 @@ function App() {
 
   // * dark mode
   const setMode = () => {
-    console.log('window.matchMedia', window.matchMedia);
-    console.log("window.matchMedia('(prefers - color - scheme: dark)').matches')", window.matchMedia('(prefers-color-scheme: dark)').matches);
+    // console.log('window.matchMedia', window.matchMedia);
+    // console.log("window.matchMedia('(prefers - color - scheme: dark)').matches')", window.matchMedia('(prefers-color-scheme: dark)').matches);
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark'
     } else {
@@ -20,7 +20,7 @@ function App() {
   }
 
   let mode = setMode()
-  console.log('initial mode', mode);
+  // console.log('initial mode', mode);
 
   const shuffledBuzzwords = buzzArr => {
     let currentIndex = buzzArr.length,
