@@ -39,30 +39,25 @@ class DarkModeToggle extends Component {
     }
 
     render() {
-        let lightDefault = 'mx-2 light-icon'
-        let darkDefault = 'mx-2 dark-icon'
-        let toggleDefault = 'toggle'
+        let lightDefault = 'mx-1 light-icon'
+        let darkDefault = 'mr-1 dark-icon'
         let activeStyles = ' active'
         let inactiveStyles = ''
-        let toggleLightClasses = toggleDefault + (this.state.dark ? inactiveStyles : activeStyles)
-        let toggleDarkClasses = toggleDefault + (this.state.dark ? activeStyles : inactiveStyles)
+        let sunIcon = (this.state.dark ? 'sun-regular' : 'sun-solid')
+        let moonIcon = (this.state.dark ? 'moon-solid' : 'moon-regular')
         let lightClasses = lightDefault + (this.state.dark ? inactiveStyles : activeStyles)
         let darkClasses = darkDefault + (this.state.dark ? activeStyles : inactiveStyles)
 
         return (
-            <div id="DarkModeToggle"
+            <div class="toggleContainer"
                 onClick={this.darkToggle}>
-                <div className={lightClasses}>
-                    <Icon name="sun"></Icon>
-                </div>
-                <div className={toggleLightClasses}>
-                    <Icon name="toggle-left"></Icon>
-                </div>
-                <div className={toggleDarkClasses}>
-                    <Icon name="toggle-right"></Icon>
-                </div>
-                <div className={darkClasses}>
-                    <Icon name="moon"></Icon>
+                <div className="toggleBox">
+                    <div className={lightClasses}>
+                        <Icon name={sunIcon}></Icon>
+                    </div>
+                    <div className={darkClasses}>
+                        <Icon name={moonIcon}></Icon>
+                    </div>
                 </div>
             </div>
         )

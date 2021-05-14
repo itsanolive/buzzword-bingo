@@ -8,7 +8,8 @@ const LinkExternal = (props) => {
             target="_blank"
             rel="noopener noreferrer"
             href={props.href}
-            aria-label={props.label} className="flex">
+            aria-label={props.label}
+            className={props.className}>
             {props.icon ?
                 <Icon name={props.icon} className={props.iconClassName} />
             :
