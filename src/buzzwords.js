@@ -186,5 +186,25 @@ export const buzzwordList = [
     {
         "value": "Unnecessary story",
         "id": "terriblejoke"
+    },
+    {
+        "value": "Gut check",
+        "id": "gut-check"
+    },
+    {
+        "value": "Behind on email",
+        "id": "behind-on-email"
+    },
+    {
+        "value": "Unknown Acronym",
+        "id": "unknown-acronym"
+    },
+    {
+        "value": "Call out",
+        "id": "call-out"
+    },
+    {
+        "value": "Low-hanging Fruit",
+        "id": "low-hanging-fruit"
     }
 ]
