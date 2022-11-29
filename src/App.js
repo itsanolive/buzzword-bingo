@@ -89,8 +89,8 @@ function App() {
       </Helmet>
       <main id="main" className={mode}>
         <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
-          <header className="Header flex w-full bg-green-300 py-4 px-2 shadow-md border-gray-900">
-            <div className="container flex mx-auto">
+          <header className="Header">
+            <div className="Header--Container">
               <div className="w-1/4">
                 <DarkModeToggle mode={mode}></DarkModeToggle>
               </div>
@@ -99,54 +99,65 @@ function App() {
               </div>
               <div className="w-1/4 Nav__right">
                 <LinkExternal
-                  label="Github"
+                  label="See and report issues on Github"
                   icon="github"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/itsanolive/buzzword-bingo"
-                  className="text-gray-900 text-lg rounded p-1 hover:text-green-300 hover:bg-gray-900">
+                  href="https://github.com/itsanolive/buzzword-bingo/issues"
+                  className="text-gray-900 text-3xl rounded-full p-1 hover:text-green-300 hover:bg-gray-900">
                 </LinkExternal>
               </div>
             </div>
           </header>
-          <div id="bingo-container" className="w-full p-1 md:px-2 md:py-10">
-            <section id="bingo" className="container max-w-screen-md p-1 md:p-2 mx-auto">
+          <div id="bingo" className="Bingo--Container">
+            <section className="Bingo">
               <BingoGrid buzzwords={bingoBoard} />
               <button className="rounded p-4 bg-green-300 text-gray-900 text-lg font-bold disabled:opacity-50" onClick={refreshPage}>Reset & Shuffle</button>
             </section>
           </div>
-          <div class="BingoWordBank--container">
+          <div class="BingoWordBank--Container">
             <h2 class="text-gray-900 dark:text-green-300 font-bold text-2xl my-6">Buzzword Bank</h2>
             <BingoWordBank activeBuzzwords={bingoBoard} buzzwords={buzzwordList} />
           </div>
-          <footer className="bg-gray-900 text-green-300">
-            <div className="container flex flex-col py-4 mx-auto text-center">
-              <div className="Footer__BuiltWith sm:w-1/2 mx-auto my-6">
+          <footer className="Footer">
+            <div className="Footer--Container">
+              <div className="Footer__BuiltWith">
                 <p className="pb-4">Built with</p>
-                <div className="Footer__BuiltWith--IconContainer grid grid-cols-4 gap-2 text-2xl">
+                <div className="Footer__BuiltWith--IconContainer">
                   <LinkExternal
                     label="ReactJS"
                     iconClassName="Footer__BuiltWith--Icon pr-2"
                     icon="react"
-                    href="https://reactjs.org/">
+                    href="https://reactjs.org/"
+                    className="flex">
                   </LinkExternal>
                   <LinkExternal
                     label="TailwindCSS"
                     iconClassName="Footer__BuiltWith--Icon pr-2"
                     icon="tailwindcss"
-                    href="https://tailwindcss.com/">
+                    href="https://tailwindcss.com/"
+                    className="flex">
                   </LinkExternal>
                   <LinkExternal
                     label="NodeJS"
                     iconClassName="Footer__BuiltWith--Icon pr-2"
                     icon="nodejs"
-                    href="https://nodejs.org/en/">
+                    href="https://nodejs.org/en/"
+                    className="flex">
                   </LinkExternal>
                   <LinkExternal
                     label="NPM"
                     iconClassName="Footer__BuiltWith--Icon pr-2"
                     icon="npm"
-                    href="https://www.npmjs.com/">
+                    href="https://www.npmjs.com/"
+                    className="flex">
+                  </LinkExternal>
+                  <LinkExternal
+                    label="Font Awesome"
+                    iconClassName="Footer__BuiltWith--Icon pr-2"
+                    icon="font-awesome-alt-brands"
+                    href="https://fontawesome.com/license/free"
+                    className="flex">
                   </LinkExternal>
                 </div>
               </div>

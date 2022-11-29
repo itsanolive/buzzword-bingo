@@ -13,39 +13,52 @@ main {
 }
 
 .Header {
-    border-bottom: 2px solid;
+    @apply flex w-full bg-green-300 py-4 px-2 shadow-md border-gray-900;
+    border-bottom: 1px solid;
 }
 
-#DarkModeToggle {
+.Header--Container {
+    @apply container flex mx-auto;
+    align-items: center;
+}
+
+.toggleContainer {
     @apply flex text-gray-900;
     align-items: center;
 }
 
-#DarkModeToggle svg {
+.toggleBox {
+    @apply flex py-1 bg-gray-900 rounded-full;
+}
+
+.toggleContainer svg {
     height: 1.5rem;
 }
 
-#DarkModeToggle .light-icon,
-#DarkModeToggle .toggle,
-#DarkModeToggle .dark-icon {
-    @apply text-gray-500;
+.toggleContainer .light-icon,
+.toggleContainer .toggle,
+.toggleContainer .dark-icon {
+    @apply text-gray-500 p-1;
 }
 
-#DarkModeToggle .light-icon svg,
-#DarkModeToggle .dark-icon svg {
+/* .toggleContainer .light-icon svg,
+.toggleContainer .dark-icon svg {
     @apply h-8;
+} */
+
+.toggleContainer .active {
+    @apply text-green-900 bg-green-300 rounded-full;
 }
 
-#DarkModeToggle .light-icon.active,
-#DarkModeToggle .dark-icon.active {
+.toggleContainer .active svg {
     @apply text-gray-900;
 }
 
-#DarkModeToggle .toggle {
+.toggleContainer .toggle {
     display: none;
 }
 
-#DarkModeToggle .toggle.active {
+.toggleContainer .toggle.active {
     display: block;
 }
 
@@ -60,6 +73,14 @@ main {
     height: 1.5rem;
 }
 
+.Bingo--Container {
+    @apply w-full p-1 py-12 md:px-2 md:py-10;
+}
+
+.Bingo {
+    @apply container max-w-screen-md p-1 md:p-2 mx-auto;
+}
+
 .BingoSuccess {
     @apply bg-green-300;
 }
@@ -70,15 +91,14 @@ main {
     align-items: center;
     justify-content: center;
 
-    @apply p-1 sm:p-2 rounded border border-gray-300 dark:border-gray-600 text-center sm:font-bold break-normal text-xs sm:text-lg text-gray-700 dark:text-white bg-gray-100 dark:bg-gray-700 shadow;
+    @apply p-1 sm:p-2 rounded border border-gray-300 dark:border-gray-600 text-center font-bold break-normal text-xs sm:text-lg text-gray-700 dark:text-white bg-gray-100 dark:bg-gray-700 shadow;
 }
 
-.BingoGridItem.BingoGridItem--active,
-.BingoWordBankItem.BingoWordBankItem--active {
+.BingoGridItem.BingoGridItem--active {
     @apply bg-gray-700 text-green-300 border-green-300 dark:bg-green-300 dark:text-gray-800 shadow-lg font-bold;
 }
 
-.BingoWordBank--container {
+.BingoWordBank--Container {
     border-top-width: .25px;
     @apply px-2 border-gray-300 border-opacity-50;
 }
@@ -92,10 +112,30 @@ main {
     @apply p-1 sm:p-2 rounded border border-gray-300 dark:border-gray-600 text-xs text-gray-700 dark:text-white bg-gray-100 dark:bg-gray-700 shadow;
 }
 
+.BingoWordBankItem.BingoWordBankItem--active {
+    @apply font-bold border-green-900 text-green-900 dark:border-green-300 dark:text-green-300;
+}
+
 @media (min-width: 640px) {
     .BingoGridItem  {
         min-height: 100px;
     }
+}
+
+.Footer {
+    @apply bg-gray-900 text-green-300;
+}
+
+.Footer--Container {
+    @apply container flex flex-col py-4 mx-auto text-center;
+}
+
+.Footer__BuiltWith {
+    @apply sm:w-1/2 mx-auto my-6;
+}
+
+.Footer__BuiltWith--IconContainer {
+    @apply grid grid-cols-5 gap-2 text-2xl;
 }
 
 .Footer__BuiltWith--IconContainer a {
