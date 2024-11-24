@@ -10,13 +10,18 @@ import BingoGrid from "../components/bingo-grid"
 
 export default function () {
   const [buzzwords, setBuzzwords] = useState([]);
-  const { data: buzzwordSubmissions, isLoading, isError } = useFindMany(api.buzzwordSubmission, {
-    filter: {
-      approved: { equals: true }
-    },
+  const [{
+    data: buzzwordSubmissions,
+    fetching: isLoading,
+    error: isError
+  }] = useFindMany(api.buzzwordSubmission, {
+    // filter: {
+    //   approved: { equals: true }
+    // },
     select: {
       value: true,
-      id: true
+      id: true,
+      approved: true
     }
   })
   const shuffledBuzzwords = buzzArr => {
