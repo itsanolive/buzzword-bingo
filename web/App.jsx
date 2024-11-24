@@ -140,7 +140,7 @@ const Header = () => {
           <Link to="/sign-in" style={{ color:"black" }}>Sign in</Link>
           <Link to="/sign-up" style={{ color: "black" }}>Sign up</Link>
         </SignedOut>
-        <Link to="/play" style={{ color:"black" }}>Play!</Link>
+        <Link to="/play" className="px-4 py-2 text-white uppercase bg-teal-800 rounded-lg hover:bg-teal-700">Play!</Link>
       </div>
     </div>
   );
