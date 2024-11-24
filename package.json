@@ -1,47 +1,32 @@
 {
-  "name": "bingo-app",
+  "name": "buzzword-bingo",
   "version": "0.1.0",
+  "description": "Internal package for Gadget app Buzzword Bingo (Development environment)",
+  "license": "UNLICENSED",
   "private": true,
-  "dependencies": {
-    "@craco/craco": "^6.0.0",
-    "@tailwindcss/postcss7-compat": "^2.0.2",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "autoprefixer": "^9.8.6",
-    "ga-4-react": "^0.1.281",
-    "postcss": "^7.0.35",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.1.0",
-    "react-scripts": "4.0.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
-    "uuid": "^8.3.2",
-    "web-vitals": "^0.2.4"
-  },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "ggt": "npx ggt@latest dev ./ --app=buzzword-bingo",
+    "build": "NODE_ENV=production vite build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@gadget-client/buzzword-bingo": "link:.gadget/client",
+    "@gadgetinc/react": "^0.18.3",
+    "autoprefixer": "^10.4.19",
+    "fastify": "^4.24.2",
+    "gadget-server": "link:.gadget/server",
+    "postcss": "^8.4.38",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "6.15.0",
+    "tailwindcss": "^3.4.3",
+    "uuid": "^9.0.1"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/node": "^20.12.8",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "3.2.0",
+    "typescript": "4.5.5",
+    "vite": "^5.3.5"
   }
 }
