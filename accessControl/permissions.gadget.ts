@@ -50,6 +50,9 @@ export const permissions: GadgetPermissions = {
     unauthenticated: {
       storageKey: "unauthenticated",
       models: {
+        buzzwordSubmission: {
+          read: true,
+        },
         user: {
           actions: {
             resetPassword: true,
