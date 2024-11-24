@@ -13,6 +13,8 @@ import ChangePassword from "./routes/change-password";
 import ForgotPassword from "./routes/forgot-password";
 import ReviewSubmissions from "./routes/admin/review-buzzword-submissions";
 import SubmitBuzzwords from "./routes/submit-buzzwords";
+import Terms from "./routes/policies/terms";
+import Privacy from "./routes/policies/privacy";
 import Play from './routes/play';
 
 const App = () => {
@@ -101,6 +103,8 @@ const App = () => {
             <SubmitBuzzwords />
           }
         />
+        <Route path="policies/terms" element={<Terms />} />
+        <Route path="policies/privacy" element={<Privacy />} />
       </Route>
     )
   );
@@ -118,20 +122,21 @@ const Layout = () => {
   return (
     <Provider api={api} navigate={navigate} auth={window.gadgetConfig.authentication}>
       <Header />
-      <div className="app">
-        <div className="overflow-y-auto app-content">
+      <div className="flex-grow p-2 app md:p-4">
+        <div className="app-content">
           <div className="main">
             <Outlet />
           </div>
         </div>
       </div>
+      <Footer />
     </Provider>
   );
 };
 
 const Header = () => {
   return (
-    <div className="header">
+    <div className="sticky top-0 z-50 border-b header">
       <a href="/" target="_self" rel="noreferrer" style={{ textDecoration: "none" }}>
         <div className="logo">{process.env.GADGET_PUBLIC_APP_SLUG}</div>
       </a>
@@ -145,5 +150,15 @@ const Header = () => {
     </div>
   );
 };
+
+const Footer = () => {
+  return (
+    <div className="flex justify-center gap-4 p-4 text-sm text-gray-600 bg-white border-t">
+      <Link to="/policies/terms">Terms of Service</Link>
+      <Link to="/policies/privacy">Privacy Policy</Link>
+    </div>
+  );
+};
+
 
 export default App;

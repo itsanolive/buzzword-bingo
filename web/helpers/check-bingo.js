@@ -1,92 +1,45 @@
-const checkBingo = () => {
-    const returnBingo = (bingo) => {
-        let bingoBg = document.getElementById('bingo-container')
-        let bingoBgClasses = bingoBg.classList
-        let hasBingo = false
-        for (let i = 0; i < bingoBgClasses.length; i++) {
-            const bingoBgClass = bingoBgClasses[i]
-            if (bingoBgClass === 'BingoSuccess') {
-                hasBingo = true
-            }
-        }
-        // console.log(bingoBgClasses);
-        if (bingo.length === 0) {
-            return false
-        } else {
-            let isBingo = bingo.every((val) => {return activeCells.indexOf(val) >= 0})
-            if ( isBingo === true ) {
-                // alert('You got bingo!');
-                if (!hasBingo) {
-                    bingoBgClasses.add('BingoSuccess')
-                    // console.log('bingo');
-                }
-                return true
-            } else {
-                if (hasBingo) {
-                    // bingoBgClasses.remove('BingoSuccess')
-                }
-                return false
-            }
-        }
-    }
-    const vertBingo = (position) => {
-        let bingo = []
-        for ( let i = 0; i < 5; i++ ) {
-            bingo.push(position)
-            position += 5
-        }
-        // console.log('vert', returnBingo(bingo));
-        returnBingo(bingo);
-    }
-    const horBingo = (position) => {
-        let bingo = []
-        // console.log('some check:', [0,5,10,15,20].some((element) => element === position));
-        if ( [0,5,10,15,20].some((element) => element === position) ) {
-            for ( let i = 0; i < 5; i++ )  {
-                bingo.push(position)
-                position += 1
-            }
-        }
-        // console.log('horBingo array:', bingo);
-        // console.log('hor', returnBingo(bingo));
-        returnBingo(bingo);
-    }
-    const diagBingo = (position) => {
-        let bingo = []
-        if ( position === 0 ) {
-            for (let i = 0; i < 5; i++) {
-                bingo.push(position)
-                position += 6
-            }
-        } else if ( position === 4 ) {
-            for (let i = 0; i < 5; i++) {
-                bingo.push(position)
-                position += 4
-            }
-        }
-        // console.log('diag', returnBingo(bingo));
-        returnBingo(bingo);
-    }
+const checkBingo = (activeCells) => {
+  // Check a line of cells for bingo
+  const checkLine = (cells) => {
+    return cells.every((cell) => activeCells.includes(cell)) ? cells : false;
+  };
 
-    let bingoCell = document.querySelectorAll('.BingoGridItem')
-    let activeCells = []
-    bingoCell.forEach(function(item, index) {
-        let active = item.getAttribute('data-active-cell')
-        if (active === 'true') {
-            activeCells.push(index)
-        }
-    })
+  // All possible winning combinations
+  const winningPatterns = [
+    // Horizontal rows
+    [0, 1, 2, 3, 4],
+    [5, 6, 7, 8, 9],
+    [10, 11, 12, 13, 14],
+    [15, 16, 17, 18, 19],
+    [20, 21, 22, 23, 24],
 
-    // console.log(activeCells);
+    // Vertical columns
+    [0, 5, 10, 15, 20],
+    [1, 6, 11, 16, 21],
+    [2, 7, 12, 17, 22],
+    [3, 8, 13, 18, 23],
+    [4, 9, 14, 19, 24],
 
-    if (activeCells.length > 4) {
-        for (let i = 0; i < activeCells.length; i++) {
-            let currentPos = activeCells[i]
-            vertBingo(currentPos)
-            horBingo(currentPos)
-            diagBingo(currentPos)
-        }
+    // Diagonals
+    [0, 6, 12, 18, 24],
+    [4, 8, 12, 16, 20],
+  ];
+
+  // Check each pattern
+  for (let pattern of winningPatterns) {
+    const winningCells = checkLine(pattern);
+    if (winningCells) {
+      return {
+        hasBingo: true,
+        winningCells,
+      };
     }
-}
+  }
+
+  return {
+    hasBingo: false,
+    winningCells: [],
+  };
+};
 
 export default checkBingo;

@@ -14,38 +14,30 @@ export default function () {
         <img src={reactLogo} className="app-logo" alt="logo" />
         <span>You are now signed into {process.env.GADGET_PUBLIC_APP_SLUG} </span>
       </div>
-      <div>
-        <p className="description" style={{ width: "100%" }}>
-          Start building your app&apos;s signed in area
-        </p>
-        <a href="/edit/files/frontend/routes/signed-in.jsx" target="_blank" rel="noreferrer" style={{ fontWeight: 500 }}>
-          frontend/routes/signed-in.jsx
-        </a>
-      </div>
       <div className="card-stack">
         <div className="card user-card">
           <div className="card-content">
             <img className="icon" src={user.googleImageUrl ?? userIcon}/>
             <div className="userData">
-              <p>id: {user.id}</p>
               <p>
                 name: {user.firstName} {user.lastName}
               </p>
               <p>
                 email: <a href={`mailto:${user.email}`}>{user.email}</a>
               </p>
-              <p>created: {user.createdAt.toString()}</p>
             </div>
           </div>
-          <div className="sm-description">This data is fetched from the user model</div>
         </div>
         <div className="flex-vertical gap-4px">
           <strong>Actions:</strong>
-          <Link to="/submit-buzzwords">Submit Buzzwords</Link>
-          <Link to="/change-password">Change password</Link>
-          <a onClick={signOut}>
+          <Link to="/submit-buzzwords" className="px-4 py-2 text-white bg-teal-800 rounded-lg hover:bg-teal-700">Submit Buzzwords</Link>
+          {/* depending on the authentication provider, the user may not have a password */}
+          {user.password && (
+            <Link to="/change-password">Change password</Link>
+          )}
+          <button onClick={signOut} className="px-4 py-2 text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200">
             Sign Out
-          </a>
+          </button>
         </div>
       </div>
       {user.admin && (
